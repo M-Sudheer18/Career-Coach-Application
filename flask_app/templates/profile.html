@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile - ReZume
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/profile.css') }}">
+
+{% endblock %}
+
+
+{% block page_title %}
+Profile
+{% endblock %}
+
+
+{% block content %}
+
+<section class="profile-page">
+
+
+    <!-- PROFILE HEADER -->
+
+    <div class="profile-header">
+
+        <h1>My Profile</h1>
+
+        <p>
+            Manage your profile information and account details.
+        </p>
+
+    </div>
+
+
+    <!-- PROFILE CARD -->
+
+    <div class="profile-card">
+
+
+        <!-- PROFILE IMAGE -->
+
+        <div class="profile-avatar-wrapper">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar">
+
+                {% if profile_image %}
+
+                    <img
+                        src="{{ profile_image }}"
+                        alt="Profile Image"
+                        id="profileImage">
+
+                {% else %}
+
+                    <span id="profileInitial">
+                        {{ user_name[0] | upper }}
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- IMAGE EDIT BUTTON -->
+
+            <button
+                type="button"
+                class="edit-image-btn"
+                id="editImageBtn"
+                title="Change Profile Image">
+
+                📷
+
+            </button>
+
+
+            <!-- HIDDEN FILE INPUT -->
+
+            <input
+                type="file"
+                id="profileImageInput"
+                accept="image/*"
+                hidden>
+
+        </div>
+
+
+        <!-- PROFILE DETAILS -->
+
+        <div class="profile-details">
+
+
+            <!-- USERNAME -->
+
+            <div class="profile-name-row">
+
+                <h2 id="profileName">
+                    {{ user_name }}
+                </h2>
+
+
+                <button
+                    type="button"
+                    class="edit-name-btn"
+                    id="editNameBtn">
+
+                    Edit
+
+                </button>
+
+            </div>
+
+
+            <!-- EDIT USERNAME -->
+
+            <div
+                class="name-edit-container"
+                id="nameEditContainer">
+
+                <input
+                    type="text"
+                    class="name-input"
+                    id="nameInput"
+                    value="{{ user_name }}"
+                    maxlength="50">
+
+
+                <button
+                    type="button"
+                    class="save-name-btn"
+                    id="saveNameBtn">
+
+                    Save
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="cancel-name-btn"
+                    id="cancelNameBtn">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+
+            <p class="profile-email">
+
+                Welcome to your ReZume profile.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- PROFILE INFORMATION -->
+
+    <div class="profile-info-card">
+
+        <h2>Profile Information</h2>
+
+
+        <div class="profile-info">
+
+
+            <!-- NAME -->
+
+            <div class="profile-info-item">
+
+                <span class="info-label">
+
+                    Name
+
+                </span>
+
+
+                <span
+                    class="info-value"
+                    id="profileInfoName">
+
+                    {{ user_name }}
+
+                </span>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="profile-info-item">
+
+                <span class="info-label">
+
+                    Account
+
+                </span>
+
+
+                <span class="info-value">
+
+                    ReZume User
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script
+    src="{{ url_for('static', filename='js/profile.js') }}">
+</script>
+
+{% endblock %}

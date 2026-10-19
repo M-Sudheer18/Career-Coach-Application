@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Technical Interview - ReZume
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/interview.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="interview-page">
+
+    <!-- Page Header -->
+    <div class="interview-header">
+        <h1>AI Technical Interview</h1>
+        <p>
+            Practice technical interviews and get AI-powered feedback
+            on your answers.
+        </p>
+    </div>
+
+
+    <!-- Interview Container -->
+    <div class="interview-container">
+
+        <!-- Interview Messages -->
+        <div id="interview-messages" class="interview-messages">
+
+            <div class="interview-message ai-message">
+
+                <div class="message-avatar">
+                    AI
+                </div>
+
+                <div class="message-content">
+                    <p>
+                        Welcome to your AI Technical Interview.
+                        Let's begin. Please introduce yourself and
+                        tell me about your technical background.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Answer Input -->
+        <div class="interview-input-container">
+
+            <textarea
+                id="candidate-answer"
+                class="interview-input"
+                placeholder="Type your answer here... (Shift + Enter for new line)"
+                rows="3"></textarea>
+
+            <button
+                id="interview-send-btn"
+                class="interview-send-btn"
+                type="button"
+                aria-label="Send answer">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/interview.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+app:
+  name: "AI Career Coach"
+  version: "1.0.0"
+
+# Directory Paths Relative to the Project Root
+data:
+  raw_uploads_dir: "data/raw_uploads"
+  processed_dir: "data/processed"
+  vector_index_dir: "data/vector_index"
+
+# Validate Parameters
+document_processing:
+  chunk_size: 5
+  chunk_overlap: 1
+  min_line_length: 5
+
+# Model Configurations
+ai:
+  embedding_model: "BAAI/bge-small-en-v1.5"
+  llm_model: "gemini-3.6-flash"
+  default_retriever_k: 5
+
+retriever:
+  distance_metric: "L2"
+  normalize_embeddings: false
+
+uploads:
+  max_file_size_mb: 10
+  allowed_extensions: [".pdf"]

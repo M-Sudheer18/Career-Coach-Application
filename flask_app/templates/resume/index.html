@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}
+Resume - ReZume
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/resume.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="resume-page">
+
+    <!-- Page Header -->
+    <div class="resume-header">
+        <h1>Resume Analysis</h1>
+        <p>
+            Upload your resume and analyze it using AI-powered
+            resume processing.
+        </p>
+    </div>
+
+
+    <!-- Resume Upload Card -->
+    <div class="resume-container">
+
+        <div class="resume-upload-card">
+
+            <div class="resume-icon">
+                <img
+                    src="{{ url_for('static', filename='images/ico.jpg') }}"
+                    alt="Resume"
+                >
+            </div>
+
+            <h2>Upload Your Resume</h2>
+
+            <p>
+                Upload your PDF resume to analyze your skills,
+                experience, education, and overall profile.
+            </p>
+
+
+            <!-- File Input -->
+            <div class="resume-file-wrapper">
+
+                <input
+                    type="file"
+                    id="resumeFile"
+                    name="resume"
+                    accept=".pdf"
+                >
+
+                <label
+                    for="resumeFile"
+                    class="resume-file-label">
+
+                    Choose PDF Resume
+
+                </label>
+
+            </div>
+
+
+            <!-- Selected File -->
+            <div
+                id="selectedFile"
+                class="selected-file">
+            </div>
+
+
+            <!-- Upload Button -->
+            <button
+                id="uploadResumeBtn"
+                type="button"
+                class="btn btn-primary">
+
+                Analyze Resume
+
+            </button>
+
+
+            <!-- Error -->
+            <div
+                id="resumeError"
+                class="error-message">
+            </div>
+
+
+            <!-- Loading -->
+            <div
+                id="resumeLoading"
+                class="loading-message">
+
+                Processing your resume...
+
+            </div>
+
+        </div>
+
+
+        <!-- Analysis Result -->
+        <div
+            id="resumeResult"
+            class="resume-result card">
+
+            <h2>Resume Analysis</h2>
+
+            <p class="placeholder-text">
+                Your resume analysis will appear here after
+                uploading your PDF.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/resume.js') }}"></script>
+
+{% endblock %}

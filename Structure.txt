@@ -1,0 +1,159 @@
+Services
+--------
+
+🏠 Main Navigation
+Home
+AI Services ▼
+✨ AI Interview
+📝 Cover Letter
+📄 Resume Scorer & Recommendations
+✅ Resume Checker
+💼 Career Coach
+Resume Proofreading
+Profile
+Plans
+
+AI Services Hub: The core interactive modules, which include:
+AI Interview preparation
+Cover Letter generation
+Resume Scorer & Recommendations
+Resume Checker
+Career Coach guidance
+Resume Proofreading
+Input/Output Handling: Captures the user's uploaded documents (PDFs) and specific prompts (e.g., "Analyze my resume"), and renders the final structured outputs back to the user.
+
+
+Architecture
+------------
+Resume PDF
+    │
+    ▼
+Document Preprocessing
+    │
+    ├── Extract text
+    ├── Clean text
+    └── Split into chunks
+          │
+          ▼
+    Embedding Model
+          │
+          ▼
+    Vector Embeddings
+          │
+          ▼
+      FAISS Index
+          │
+          │
+User: "Analyze my resume"
+          │
+          ▼
+      Similarity Search
+          │
+          ▼
+    Relevant Resume Chunks
+          │
+          ▼
+      Gemini LLM
+          │
+          ▼
+Prompt + Retrieved Context
+          │
+          ▼
+Resume Analysis / Recommendations
+          │
+          ▼
+        UI Output
+
+
+
+
+                         AI CAREER COACH
+                               │
+                ┌──────────────┴──────────────┐
+                │                             │
+          ADVANCED WEB APP              STREAMLIT APP
+                │                             │
+        Flask + HTML/CSS/JS               Streamlit
+                │                             │
+                └──────────────┬──────────────┘
+                               │
+                       SHARED PYTHON CORE
+                               │
+        ┌──────────────────────┼──────────────────────┐
+        │                      │                      │
+   Resume Engine          AI/RAG Engine         Career Engine
+        │                      │                      │
+        ▼                      ▼                      ▼
+ PDF Processing          Embeddings              Interview
+ Chunking                FAISS                   Cover Letter
+ Resume Parsing          Gemini API              Career Coach
+ Scoring                 Prompt Engine           Recommendations
+ Proofreading            Retrieval              Job Matching
+                               │
+                               ▼
+                         Data / Storage
+
+
+
+
+
+
+AI-Career-Coach/
+│
+├── backend/
+│   ├── services/
+│   │   ├── resume_service.py
+│   │   ├── interview_service.py
+│   │   ├── career_service.py
+│   │   ├── cover_letter_service.py
+│   │   └── proofreading_service.py
+│   │
+│   ├── ai/
+│   │   ├── gemini.py
+│   │   ├── embeddings.py
+│   │   ├── prompts.py
+│   │   └── rag.py
+│   │
+│   ├── document/
+│   │   ├── pdf_loader.py
+│   │   ├── text_cleaner.py
+│   │   ├── chunker.py
+│   │   └── resume_parser.py
+│   │
+│   ├── database/
+│   │   └── ...
+│   │
+│   └── utils/
+│
+├── flask_app/
+│   ├── app.py
+│   ├── routes/
+│   ├── templates/
+│   ├── static/
+│   │   ├── css/
+│   │   └── js/
+│   └── ...
+│
+├── streamlit_app/
+│   ├── app.py
+│   ├── pages/
+│   └── components/
+│
+├── data/
+│
+├── vectorstore/
+│
+├── tests/
+│
+├── .env
+├── requirements.txt
+└── README.md
+
+
+notebooks/
+├── 01_data_exploration.ipynb
+├── 02_document_processing.ipynb
+├── 03_embedding_experiments.ipynb
+├── 04_rag_experiments.ipynb
+└── 05_ai_evaluation.ipynb
+

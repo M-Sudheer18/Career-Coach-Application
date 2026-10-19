@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cover Letter Generator - ReZume
+{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/cover_letter.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Cover Letter Generator</h1>
+
+        <p>
+            Generate a professional, ATS-friendly cover letter based on a job description.
+        </p>
+    </div>
+
+
+    <div class="cover-letter-layout">
+
+        <!-- Input Section -->
+        <section class="card input-card">
+
+            <h2>Job Description</h2>
+
+            <p class="section-description">
+                Paste the job description below to generate a tailored cover letter.
+            </p>
+
+
+            <textarea
+                id="jobDescription"
+                name="job_description"
+                placeholder="Paste the job description here..."
+                rows="15"
+            ></textarea>
+
+
+            <button
+                id="generateCoverLetterBtn"
+                type="button">
+                Generate Cover Letter
+            </button>
+
+
+            <div
+                id="coverLetterError"
+                class="error-message">
+            </div>
+
+        </section>
+
+
+        <!-- Output Section -->
+        <section class="card output-card">
+
+            <div class="output-header">
+
+                <h2>Generated Cover Letter</h2>
+
+                <button
+                    id="copyCoverLetterBtn"
+                    type="button">
+                    Copy
+                </button>
+
+            </div>
+
+
+            <!-- Description at TOP like left section -->
+            <p class="section-description output-description">
+                Your generated cover letter.
+            </p>
+
+
+            <!-- Loading -->
+            <div
+                id="coverLetterLoading"
+                class="loading-message">
+
+                Generating your cover letter...
+
+            </div>
+
+
+            <!-- Output Box -->
+            <div
+                id="coverLetterOutput"
+                class="cover-letter-output">
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/cover_letter.js') }}"></script>
+
+{% endblock %}

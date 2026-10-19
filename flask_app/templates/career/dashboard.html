@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}
+Career Dashboard - ReZume
+{% endblock %}
+
+{% block extra_css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/dashboard.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+
+    <!-- Career Services -->
+    <div class="career-services">
+
+        <div class="section-heading">
+            <h2>Career Services</h2>
+        </div>
+
+
+        <div class="career-service-grid">
+
+            <!-- Career Coach -->
+            <a
+                href="{{ url_for('career.coach_page') }}"
+                class="card career-service-card"
+            >
+                <!-- <div class="career-service-icon">
+                    💡
+                </div> -->
+
+                <div class="career-service-content">
+                    <h3>Career Coach</h3>
+
+                    <p>
+                        Get personalized AI guidance for your
+                        career goals, skills, resume, and job search.
+                    </p>
+                </div>
+
+                <span class="career-service-arrow">
+                    →
+                </span>
+            </a>
+
+
+            <!-- Cover Letter -->
+            <a
+                href="{{ url_for('cover_letter.cover_letter_page') }}"
+                class="card career-service-card"
+            >
+                <!-- <div class="career-service-icon">
+                    ✉️
+                </div> -->
+
+                <div class="career-service-content">
+                    <h3>Cover Letter Generator</h3>
+
+                    <p>
+                        Generate a professional and ATS-friendly
+                        cover letter from a job description.
+                    </p>
+                </div>
+
+                <span class="career-service-arrow">
+                    →
+                </span>
+            </a>
+
+
+            <!-- Resume Scorer -->
+            <a
+                href="{{ url_for('resume_scorer.resume_score_page') }}"
+                class="card career-service-card"
+            >
+                <!-- <div class="career-service-icon">
+                    📊
+                </div> -->
+
+                <div class="career-service-content">
+                    <h3>Resume Scorer</h3>
+
+                    <p>
+                        Evaluate your resume against a job description
+                        and identify areas for improvement.
+                    </p>
+                </div>
+
+                <span class="career-service-arrow">
+                    →
+                </span>
+            </a>
+
+
+            <!-- Recommendations -->
+            <a
+                href="{{ url_for('recommendation.recommendations_page') }}"
+                class="card career-service-card"
+            >
+                <!-- <div class="career-service-icon">
+                    🚀
+                </div> -->
+
+                <div class="career-service-content">
+                    <h3>Career Recommendations</h3>
+
+                    <p>
+                        Discover relevant skills, certifications,
+                        projects, and career development opportunities.
+                    </p>
+                </div>
+
+                <span class="career-service-arrow">
+                    →
+                </span>
+            </a>
+
+
+            <!-- AI Interview -->
+            <a
+                href="{{ url_for('interview.interview_page') }}"
+                class="card career-service-card"
+            >
+                <!-- <div class="career-service-icon">
+                    🎯
+                </div> -->
+
+                <div class="career-service-content">
+                    <h3>AI Technical Interview</h3>
+
+                    <p>
+                        Practice technical interviews and receive
+                        AI-powered feedback on your answers.
+                    </p>
+                </div>
+
+                <span class="career-service-arrow">
+                    →
+                </span>
+            </a>
+
+
+            <!-- Resume -->
+            <a
+                href="{{ url_for('resume.resume_dashboard') }}"
+                class="card career-service-card"
+            >
+                <!-- <div class="career-service-icon">
+                    📄
+                </div> -->
+
+                <div class="career-service-content">
+                    <h3>Resume Management</h3>
+
+                </div>
+
+                <span class="career-service-arrow">
+                    →
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Quick Start -->
+    <div class="career-quick-start card">
+
+        <div class="quick-start-content">
+
+            <span class="quick-start-label">
+                Get Started
+            </span>
+
+            <h2>
+                Ready to improve your career?
+            </h2>
+
+            <!-- <p>
+                Upload your resume and start using AI-powered
+                career tools tailored to your professional goals.
+            </p> -->
+
+        </div>
+
+        <a
+            href="{{ url_for('resume.resume_dashboard') }}"
+            class="btn btn-primary"
+        >
+            Upload Resume
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

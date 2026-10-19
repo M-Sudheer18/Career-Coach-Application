@@ -1,0 +1,517 @@
+/* =========================================
+   COVER LETTER PAGE
+========================================= */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.cover-letter-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* =========================================
+   CARDS - SEAMLESS
+========================================= */
+
+.card {
+    background: transparent;
+    border: none !important;
+    outline: none !important;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: none !important;
+}
+
+.card h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+}
+
+
+/* =========================================
+   SECTION DESCRIPTION
+========================================= */
+
+.section-description {
+    margin: 0 0 18px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   JOB DESCRIPTION TEXTAREA
+========================================= */
+
+#jobDescription {
+    width: 100%;
+    min-height: 350px;
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    /* Visible input box */
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+
+    outline: none;
+
+    /* LIGHT MODE */
+    background: #ffffff;
+
+    color: #111827;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#jobDescription:focus {
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+#jobDescription::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   GENERATE BUTTON
+========================================= */
+
+#generateCoverLetterBtn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+#generateCoverLetterBtn:hover {
+    background: #4338ca;
+}
+
+#generateCoverLetterBtn:active {
+    transform: scale(0.99);
+}
+
+#generateCoverLetterBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+    margin-top: 12px;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+
+/* =========================================
+   OUTPUT HEADER
+========================================= */
+
+.output-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.output-header h2 {
+    margin: 0;
+}
+
+
+/* =========================================
+   COPY BUTTON
+========================================= */
+
+#copyCoverLetterBtn {
+    padding: 8px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+#copyCoverLetterBtn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-message {
+    display: none;
+
+    margin-bottom: 15px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   GENERATED COVER LETTER OUTPUT
+========================================= */
+
+.cover-letter-output {
+    min-height: 350px;
+    max-height: 600px;
+
+    overflow-y: auto;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+
+    /* IMPORTANT */
+    display: block;
+    text-align: left;
+}
+
+
+.placeholder-text {
+    margin: 0;
+
+    /* Same alignment as textarea text */
+    text-align: left;
+
+    color: #9ca3af;
+
+    /* Make sure it stays at the top */
+    display: block;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .cover-letter-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #jobDescription,
+    .cover-letter-output {
+        min-height: 300px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .page-container {
+        padding: 25px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 20px 0;
+    }
+
+    .output-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================
+   DARK MODE - COVER LETTER
+========================================= */
+
+body.dark-mode .page-header h1 {
+    color: #f9fafb;
+}
+
+body.dark-mode .page-header p {
+    color: #cbd5e1;
+}
+
+
+/* Seamless Cards */
+
+body.dark-mode .card {
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+
+/* Headings */
+
+body.dark-mode .card h2,
+body.dark-mode .output-header h2 {
+    color: #f9fafb;
+}
+
+
+/* Description */
+
+body.dark-mode .section-description {
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   DARK MODE TEXTAREA
+========================================= */
+
+body.dark-mode #jobDescription {
+
+    background: #111827;
+
+    border: 1px solid #475569;
+
+    color: #f9fafb;
+}
+
+body.dark-mode #jobDescription::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode #jobDescription:focus {
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+
+/* =========================================
+   DARK MODE COPY BUTTON
+========================================= */
+
+body.dark-mode #copyCoverLetterBtn {
+
+    background: #1f2937;
+
+    border-color: #475569;
+
+    color: #f9fafb;
+}
+
+body.dark-mode #copyCoverLetterBtn:hover {
+    background: #273449;
+}
+
+
+/* =========================================
+   DARK MODE LOADING
+========================================= */
+
+body.dark-mode .loading-message {
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   DARK MODE OUTPUT BOX
+========================================= */
+
+body.dark-mode .cover-letter-output {
+
+    background: #111827;
+
+    border: 1px solid #475569;
+
+    color: #f9fafb;
+}
+
+body.dark-mode .placeholder-text {
+    color: #94a3b8;
+}
+
+body.dark-mode .error-message {
+    color: #f87171;
+}
+
+
+/* =========================================
+   REMOVE GLOBAL PAGE BORDERS
+========================================= */
+
+.top-header {
+    border-bottom: none !important;
+}
+
+.sidebar {
+    border-right: none !important;
+}
+
+.sidebar-logo {
+    border-bottom: none !important;
+}
+
+.sidebar-bottom {
+    border-top: none !important;
+}
+
+/* =========================================
+   AI GENERATING INDICATOR
+========================================= */
+
+.cover-letter-generating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #6b7280;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.cover-letter-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cover-letter-dots span {
+    width: 6px;
+    height: 6px;
+    background: #6b7280;
+    border-radius: 50%;
+    animation: coverLetterGenerating 1.2s infinite ease-in-out;
+}
+
+.cover-letter-dots span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.cover-letter-dots span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes coverLetterGenerating {
+    0%, 60%, 100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+/* DARK MODE */
+
+body.dark-mode .cover-letter-generating {
+    color: #cbd5e1;
+}
+
+body.dark-mode .cover-letter-dots span {
+    background: #cbd5e1;
+}

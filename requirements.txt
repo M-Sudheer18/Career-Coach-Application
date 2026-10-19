@@ -1,0 +1,13 @@
+Flask
+beautifulsoup4
+faiss-cpu
+google-genai
+numpy
+pymupdf
+pypdf
+python-dotenv
+PyYAML
+requests
+scikit-learn
+sentence-transformers
+torch

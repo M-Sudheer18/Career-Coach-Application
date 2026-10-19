@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}
+Career Recommendations - ReZume
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/recommendations.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Career Recommendations</h1>
+        <p>
+            Get AI-powered recommendations for skills, certifications,
+            projects, and career growth based on your target role.
+        </p>
+    </div>
+
+    <!-- Recommendation Input -->
+    <section class="card">
+
+        <h2>Target Role</h2>
+
+        <p class="section-description">
+            Enter the role you want to pursue and let AI suggest
+            the best next steps for your career.
+        </p>
+
+        <div class="form-group">
+
+            <label for="targetRole" class="form-label">
+                Target Job Role
+            </label>
+
+            <input
+                type="text"
+                id="targetRole"
+                name="target_role"
+                class="form-input"
+                placeholder="e.g. AI/ML Engineer"
+            >
+
+        </div>
+
+        <button
+            type="button"
+            id="getRecommendationsBtn"
+            class="btn btn-primary">
+
+            Get Recommendations
+
+        </button>
+
+        <button
+            type="button"
+            id="newRecommendationBtn"
+            class="btn">
+
+            New Recommendation
+
+        </button>
+
+        <div
+            id="recommendationsError"
+            class="error-message">
+        </div>
+
+    </section>
+
+
+    <!-- Recommendations Output -->
+    <section
+        class="card"
+        id="recommendationsResultCard">
+
+        <div class="output-header">
+
+            <h2>AI Career Recommendations</h2>
+
+            <button
+                id="copyRecommendationsBtn"
+                type="button">
+                Copy
+            </button>
+
+        </div>
+
+        <p class="section-description output-description">
+            Personalized recommendations for your target role.
+        </p>
+
+        <div
+            id="recommendationsLoading"
+            class="loading-message">
+
+            Generating recommendations...
+
+        </div>
+
+        <div
+            id="recommendationsOutput"
+            class="recommendations-output">
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/recommendations.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}
+Career Coach AI - ReZume
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/coach.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="career-coach-page">
+
+    <div class="career-coach-header">
+        <h1>Career Coach AI</h1>
+        <p>Your path to professional success</p>
+    </div>
+
+    <div class="career-chat-container">
+
+        <div id="chat-messages" class="chat-messages">
+
+            <div class="chat-message ai-message">
+                <div class="message-avatar">
+                    AI
+                </div>
+
+                <div class="message-content">
+                    <p>
+                        Hello! I'm your AI Career Coach.
+                        Ask me anything about your career, skills,
+                        resume, job search, or professional growth.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chat-input-container">
+
+            <textarea
+                id="career-question"
+                class="career-chat-input"
+                placeholder="Ask about your career... (Shift + Enter for new line)"
+                rows="3"></textarea>
+
+            <button
+                id="career-send-btn"
+                class="career-send-btn"
+                type="button"
+                aria-label="Send message">
+                ➤
+            </button>
+
+        </div>
+
+        <button
+            id="new-career-chat-btn"
+            class="new-career-chat-btn"
+            type="button">
+            New Conversation
+        </button>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/coach.js') }}"></script>
+{% endblock %}

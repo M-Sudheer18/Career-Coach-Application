@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}
+ReZume
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="home-page">
+
+    <div class="home-hero">
+        <div class="home-hero-content">
+            <span class="home-badge">AI-Powered Career Assistant</span>
+
+            <h1>
+                Build a Better Resume.
+                <span>Build a Better Career.</span>
+            </h1>
+
+            <p>
+                Analyze your resume, prepare for technical interviews,
+                improve your career profile, and get AI-powered guidance
+                tailored to your professional goals.
+            </p>
+
+            <div class="home-actions">
+                <a href="{{ url_for('resume.resume_dashboard') }}"
+                   class="btn btn-primary">
+                    Get Started
+                </a>
+
+                <a href="{{ url_for('career.career_dashboard') }}"
+                   class="btn btn-secondary">
+                    Explore AI Services
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="home-services">
+
+        <div class="page-header text-center">
+            <h2 class="page-title">AI Career Services</h2>
+
+            <p class="page-description">
+                Everything you need to improve your resume and career.
+            </p>
+        </div>
+
+
+        <div class="home-service-grid">
+
+            <a href="{{ url_for('resume.resume_dashboard') }}"
+               class="card service-card">
+
+                <div class="service-icon">📄</div>
+
+                <h3>Resume Analysis</h3>
+
+                <p>
+                    Upload your resume and analyze its content using
+                    AI-powered resume processing.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('interview.interview_page') }}"
+               class="card service-card">
+
+                <div class="service-icon">🎯</div>
+
+                <h3>AI Interview</h3>
+
+                <p>
+                    Practice technical interviews and receive
+                    AI-powered feedback on your answers.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('career.coach_page') }}"
+               class="card service-card">
+
+                <div class="service-icon">💡</div>
+
+                <h3>Career Coach</h3>
+
+                <p>
+                    Get personalized career guidance based on
+                    your resume and professional goals.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('cover_letter.cover_letter_page') }}"
+               class="card service-card">
+
+                <div class="service-icon">✉️</div>
+
+                <h3>Cover Letter</h3>
+
+                <p>
+                    Generate a professional cover letter based
+                    on your target job description.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('resume_scorer.resume_score_page') }}"
+               class="card service-card">
+
+                <div class="service-icon">📊</div>
+
+                <h3>Resume Scorer</h3>
+
+                <p>
+                    Evaluate your resume against a job description
+                    and identify areas for improvement.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('recommendation.recommendations_page') }}"
+               class="card service-card">
+
+                <div class="service-icon">🚀</div>
+
+                <h3>Recommendations</h3>
+
+                <p>
+                    Discover useful skills, certifications and
+                    portfolio projects for your career.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

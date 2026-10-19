@@ -1,0 +1,451 @@
+/* Career Recommendations Page */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+
+/* Page Header */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+
+/* Cards */
+
+.card {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 25px;
+}
+
+.card h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+}
+
+
+/* Section Description */
+
+.section-description {
+    margin: 0 0 18px;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Form Group */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Target Role Input */
+
+.form-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+
+    background: #ffffff;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px;
+
+    color: #111827;
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+}
+
+.form-input:focus {
+    border-color: #4f46e5 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+
+/* Recommendations Button */
+
+#getRecommendationsBtn {
+    width: 100%;
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #4f46e5;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+#getRecommendationsBtn:hover {
+    background: #4338ca;
+}
+
+#getRecommendationsBtn:active {
+    transform: scale(0.99);
+}
+
+#getRecommendationsBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* New Recommendation Button */
+
+#newRecommendationBtn {
+    padding: 12px 20px;
+
+    background: #f3f4f6;
+    color: #111827;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+#newRecommendationBtn:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+#newRecommendationBtn:active {
+    transform: scale(0.98);
+}
+
+/* Error Message */
+
+.error-message {
+    margin-top: 12px;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+
+/* Recommendations Result Section */
+
+#recommendationsResultCard {
+    margin-top: 30px;
+}
+
+
+/* Output Header */
+
+.output-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 8px;
+}
+
+.output-header h2 {
+    margin: 0;
+}
+
+.output-description {
+    margin: 0 0 18px;
+}
+
+#copyRecommendationsBtn {
+    padding: 10px 18px;
+
+    background: transparent;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    color: #374151;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+#copyRecommendationsBtn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+#copyRecommendationsBtn:active {
+    transform: scale(0.98);
+}
+
+body.dark-mode #copyRecommendationsBtn {
+    background: transparent;
+
+    border: 1px solid #4b5563;
+
+    color: #f9fafb;
+}
+
+body.dark-mode #copyRecommendationsBtn:hover {
+    background: #1f2937;
+    border-color: #6366f1;
+}
+
+
+/* Recommendations Output */
+
+.recommendations-output {
+    min-height: 300px;
+    max-height: 600px;
+
+    overflow-y: auto;
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px;
+
+    color: #111827;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* Placeholder Text */
+
+.placeholder-text {
+    margin: 0;
+    color: #9ca3af;
+}
+
+
+/* Loading Message */
+
+.loading-message {
+    display: none;
+    margin-bottom: 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.recommendations-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recommendations-output::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.recommendations-output::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+/* Dark Mode */
+
+body.dark-mode .page-header h1 {
+    color: #f9fafb;
+}
+
+body.dark-mode .page-header p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode .card h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .section-description {
+    color: #cbd5e1;
+}
+
+body.dark-mode .form-label {
+    color: #e5e7eb;
+}
+
+body.dark-mode #getRecommendationsBtn {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+body.dark-mode #getRecommendationsBtn:hover {
+    background: #4f46e5;
+}
+
+body.dark-mode #getRecommendationsBtn:disabled {
+    opacity: 0.6;
+}
+
+body.dark-mode .recommendations-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.dark-mode .recommendations-output::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body.dark-mode .recommendations-output::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 10px;
+}
+
+body.dark-mode #newRecommendationBtn {
+    background: #273449;
+    color: #f9fafb;
+    border-color: #3f4b5f;
+}
+
+body.dark-mode #newRecommendationBtn:hover {
+    background: #334155;
+    border-color: #6366f1;
+}
+
+/* Dark Mode Input */
+
+body.dark-mode .form-input {
+    background: #111827;
+    border: 1px solid #374151 !important;
+    color: #f9fafb;
+}
+
+body.dark-mode .form-input::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode .form-input:focus {
+    border-color: #6366f1 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+
+/* Dark Mode Output */
+
+body.dark-mode .recommendations-output {
+    background: #111827;
+    border: 1px solid #374151 !important;
+    color: #f9fafb;
+}
+
+body.dark-mode .placeholder-text {
+    color: #94a3b8;
+}
+
+
+/* Dark Mode Loading */
+
+body.dark-mode .loading-message {
+    color: #cbd5e1;
+}
+
+
+/* Dark Mode Error */
+
+body.dark-mode .error-message {
+    color: #f87171;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .page-container {
+        padding: 30px 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .page-container {
+        padding: 25px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+}
