@@ -133,7 +133,7 @@ The Streamlit process never imports `backend/`. It only uses HTTP (`requests`). 
 ├── .gitignore
 ├── backend/
 │   ├── ai/
-│   │   ├── embeddings.py             # SentenceTransformer, normalize_embeddings=True
+│   │   ├── embeddings.py             # Google Embeddings
 │   │   ├── gemini_client.py          # Gemini client, retries on 500/503
 │   │   ├── prompts.py                # system instructions + build_rag_prompt
 │   │   ├── rag.py                    # run_rag_pipeline

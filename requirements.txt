@@ -9,6 +9,4 @@ python-dotenv
 PyYAML
 requests
 scikit-learn
-sentence-transformers
-torch
 gunicorn
