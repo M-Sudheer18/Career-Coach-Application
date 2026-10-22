@@ -10,3 +10,4 @@ PyYAML
 requests
 scikit-learn
 gunicorn
+streamlit
